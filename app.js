@@ -188,7 +188,7 @@
 
     const displayPos = pos + 1;
     progressCount.textContent = displayPos + " / " + total;
-    const pct = Math.round((pos / total) * 100);
+    const pct = Math.round((displayPos / total) * 100);
     progressFill.style.width = pct + "%";
     progressPct.textContent = pct + "%";
 
