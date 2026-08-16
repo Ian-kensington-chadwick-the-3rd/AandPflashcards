@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Physics Flashcards</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚛️</text></svg>" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+
+    <!-- HOME SCREEN -->
+    <section id="home-screen" class="screen">
+      <header class="home-header">
+        <div class="brand">
+          <span class="brand-icon" aria-hidden="true">⚛️</span>
+          <h1>Physics Flashcards</h1>
+        </div>
+        <p class="tagline">Pick a subject to start studying. Your progress is saved automatically.</p>
+      </header>
+
+      <div id="subject-grid" class="subject-grid"></div>
+
+      <footer class="home-footer">
+        <button id="theme-toggle" class="ghost-btn" type="button" aria-label="Toggle dark mode">
+          <span id="theme-icon">🌙</span> <span id="theme-label">Dark mode</span>
+        </button>
+      </footer>
+    </section>
+
+    <!-- STUDY SCREEN -->
+    <section id="study-screen" class="screen hidden">
+      <header class="study-header">
+        <button id="back-btn" class="ghost-btn" type="button">&larr; Subjects</button>
+        <div class="study-title">
+          <h2 id="study-subject-title"></h2>
+          <p id="study-subject-source"></p>
+        </div>
+        <button id="reset-btn" class="ghost-btn danger" type="button">Reset</button>
+      </header>
+
+      <div class="progress-wrap">
+        <div class="progress-track">
+          <div id="progress-fill" class="progress-fill"></div>
+        </div>
+        <div class="progress-meta">
+          <span id="progress-count">1 / 1</span>
+          <span id="progress-pct">0%</span>
+        </div>
+      </div>
+
+      <div class="card-stage">
+        <div id="flashcard" class="flashcard" tabindex="0" role="button" aria-label="Flip flashcard">
+          <div class="flashcard-inner">
+            <div class="flashcard-face flashcard-front">
+              <span id="front-section-badge" class="section-badge"></span>
+              <p id="front-text" class="card-text"></p>
+              <span class="flip-hint">Tap or press Space to flip</span>
+            </div>
+            <div class="flashcard-face flashcard-back">
+              <span class="section-badge answer-badge">Answer</span>
+              <p id="back-text" class="card-text"></p>
+              <span class="flip-hint">Tap or press Space to flip back</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="controls">
+        <button id="prev-btn" class="control-btn" type="button">&larr; Prev</button>
+        <button id="flip-btn" class="control-btn primary" type="button">Flip</button>
+        <button id="next-btn" class="control-btn" type="button">Next &rarr;</button>
+      </div>
+
+      <div class="secondary-controls">
+        <label class="shuffle-toggle">
+          <input type="checkbox" id="shuffle-toggle" />
+          <span>Shuffle</span>
+        </label>
+        <span id="section-context" class="section-context"></span>
+      </div>
+    </section>
+
+    <!-- COMPLETION SCREEN -->
+    <section id="complete-screen" class="screen hidden">
+      <div class="complete-box">
+        <span class="complete-icon" aria-hidden="true">🎉</span>
+        <h2>Deck complete!</h2>
+        <p>You've gone through every card in this subject.</p>
+        <div class="complete-actions">
+          <button id="complete-restart-btn" class="control-btn primary" type="button">Study Again</button>
+          <button id="complete-home-btn" class="control-btn" type="button">Back to Subjects</button>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
